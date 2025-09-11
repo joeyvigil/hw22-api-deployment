@@ -1,6 +1,19 @@
 # hw22-api-deployment
 In this lesson you will be creating your own CI/CD Pipeline as we did in class (Feel free to follow along in the recording). 
 
+view deployed swagger doc on https://hw22-api-deployment.onrender.com/api/docs
+
+## Completed CI/CD
+
+### Complted Build Test Deploy Pipeline on Github
+![build](images/build.jpg)
+
+### Deployed via Render API
+![deploy](images/deployed_via_api.jpg)
+
+### Live API on Render connected to Postgresql Database
+![swagger](images/swagger.jpg)
+
 ## You will
 -   Host a database to Render
 -   Create your production config
@@ -38,4 +51,17 @@ class ProductionConfig:
     SQLALCHEMY_DATABASE_URI =  os.environ.get('SQLALCHEMY_DATABASE_URI') or 'sqlite:///app.db'
     CACHE_TYPE = "SimpleCache"
 ```
-4.
+4. change secret key in auth file to:
+```python
+SECRET_KEY = os.environ.get('SECRET_KEY') or 'super secret key'
+```
+5. run pip installs and freeze requirements
+```shell
+pip install psycopg2
+pip install gunicorn
+pip freeze > requirements.txt
+```
+6. change swagger file to render url and http -> https
+7. add SQLALCHEMY_DATABASE_URI and SECRET_KEY to render web service environment variables
+8. add Service ID (from render) and api key (from render) to secret variables on github
+9. commit, push (may want to run each yaml job one at a time so you can catch any errors)
