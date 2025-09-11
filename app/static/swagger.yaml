@@ -389,6 +389,7 @@ paths:
       tags:
         -  Ticket Inventory (association table)
       summary: Create Part with Inventory ID
+      description: "Create a new ticket inventory item in the system with the given inventory ID"
       parameters:
         - in: path
           name: id
@@ -404,6 +405,7 @@ paths:
       tags:
         -  Ticket Inventory (association table)
       summary: Assign Part to Ticket
+      description: "Assign an existing inventory item to a service ticket"
       parameters:
         - in: path
           name: ticketId
@@ -426,6 +428,7 @@ paths:
       tags:
         -  Ticket Inventory (association table)
       summary: Assign Part to Ticket
+      description: "Assign an existing inventory item to a service ticket"
       parameters:
         - in: path
           name: ticketId
@@ -482,6 +485,7 @@ paths:
       tags:
         - Service Tickets
       summary: Get Service Ticket by ID
+      description: "Retrieve a specific service ticket by its ID"
       parameters:
         - in: path
           name: id
@@ -499,6 +503,7 @@ paths:
       tags:
         - Service Tickets
       summary: Update Service Ticket
+      description: "Update an existing service ticket in the system"
       parameters:
         - in: path
           name: id
@@ -522,6 +527,7 @@ paths:
       tags:
         - Service Tickets
       summary: Delete Service Ticket
+      description: "Delete a service ticket from the system by its ID"
       parameters:
         - in: path
           name: id
@@ -542,6 +548,7 @@ paths:
       tags:
         - Service Mechanics (association table)
       summary: Assign Mechanic to Ticket
+      description: "Assign an existing mechanic to a service ticket"
       parameters:
         - in: path
           name: ticketId
@@ -564,6 +571,7 @@ paths:
       tags:
         - Service Mechanics (association table)
       summary: Remove Mechanic from Ticket
+      description: "Remove an existing mechanic from a service ticket"
       parameters:
         - in: path
           name: ticketId

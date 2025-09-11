@@ -28,3 +28,7 @@ In this lesson you will be creating your own CI/CD Pipeline as we did in class (
 
 ## Submission:
 After deploying submit the link to your deployed service as well as the the link to your github repository.
+
+## Steps
+1. Copy .github/workflows/main.yaml 
+2. 
