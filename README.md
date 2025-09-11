@@ -31,4 +31,11 @@ After deploying submit the link to your deployed service as well as the the link
 
 ## Steps
 1. Copy .github/workflows/main.yaml 
-2. 
+2. Create render postgresql db, get external db url, this will be your SQLALCHEMY_DATABASE_URI
+3. change production config to :
+```python
+class ProductionConfig:
+    SQLALCHEMY_DATABASE_URI =  os.environ.get('SQLALCHEMY_DATABASE_URI') or 'sqlite:///app.db'
+    CACHE_TYPE = "SimpleCache"
+```
+4.
