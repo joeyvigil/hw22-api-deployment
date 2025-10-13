@@ -9,6 +9,7 @@ from .blueprints.service_tickets import service_tickets_bp
 from .blueprints.inventory import inventory_bp
 from .blueprints.ticket_inventory import ticket_inventory_bp
 from flask_swagger_ui import get_swaggerui_blueprint
+from flask_cors import CORS
 
 SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
 API_URL = '/static/swagger.yaml'  # Our API URL (can of course be a local resource)
@@ -25,7 +26,7 @@ def create_app(config_name):
 
     app = Flask(__name__) #Creating base app
     app.config.from_object(f'config.{config_name}')
-
+    CORS(app) #added CORS
 
     #initialize extensions (plugging them in)
     db.init_app(app)
@@ -41,5 +42,6 @@ def create_app(config_name):
     app.register_blueprint(inventory_bp, url_prefix='/inventory')
     app.register_blueprint(ticket_inventory_bp, url_prefix='/ticket_inventory')
     app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL) #Registering our swagger blueprint
-
+    
+    
     return app
