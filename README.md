@@ -3,6 +3,12 @@ In this lesson you will be creating your own CI/CD Pipeline as we did in class (
 
 view deployed swagger doc on https://hw22-api-deployment.onrender.com/api/docs
 
+## 10-13-2024
+1. created new render database **mechanic_db2**
+2. get service id from new db, -> add to github secrets as SERVICE_ID
+3. get external db url from new db -> add to render web service environment variables as SQLALCHEMY_DATABASE_URI
+4. pushing commit now to trigger github actions
+
 ## Completed CI/CD
 
 ### Complted Build Test Deploy Pipeline on Github
