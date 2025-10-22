@@ -22,7 +22,7 @@ def login():
                 "token" : token
             }), 200
         
-        return jsonify("invalid email or password")
+        return jsonify({"message": "invalid email or password"}), 401
     except ValidationError as e:
         return jsonify(e.messages), 400 
     except Exception as e:
